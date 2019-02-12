@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<img src="{{infor.image_url}}" style="width:200px">
+<h2>{{infor.name}}</h2>
+<a>------------------------------------------------</a>
+<h3>{{infor.info}}</h3>
+<a>------------------------------------------------</a>
+{% if infor.flag == 'book' %}
+<h3>{{infor.star}}</h3>
+<a>------------------------------------------------</a>
+{% endif %}
+<h4>{{infor.describe}}</h4>
+<a>------------------------------------------------</a>
+<br>
+{% if infor.flag == 'flim' %}
+<a href="{{infor.link}}">点击获取资源</a>
+{% endif %}
+{% endblock %}

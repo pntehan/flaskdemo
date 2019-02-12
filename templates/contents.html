@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row"> 
+            {% for x in contents %}
+            <div class="col-sm">
+                <div class="card" style="width: 200px;">
+                    <img class="card-img-top" src="{{x.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <a class="card-title" href="{{x.flag}}-{{x.id}}" style="font-weight: 700; font-size: 14px;">{{x.name}}</a>
+                        <br>
+                        {% if x.flag == 'flim' %}
+                        <a class="link", href="{{x.link}}">点击获取下载地址</a>
+                        {% endif %}
+                        {% if x.flag == 'book' %}
+                        <a>{{x.info}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <br />
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if page.pre > 0 %}
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.first}}">首页</a></li>
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.pre}}">上一页</a></li>
+            {% endif %}
+            {% if page.next <= 36 %}
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.one}}">{{page.one}}</a></li>
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.two}}">{{page.two}}</a></li>
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.three}}">{{page.three}}</a></li>
+            <li class="page-item"><a class="page-link">...</a></li>
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.next}}">下一页</a></li>
+            <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.end}}">末页</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

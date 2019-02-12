@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+<script language="javascript" type="text/javascript">
+    function checkinfo() {
+        var username = document.getElementsByName('Username')[0].value;
+        var email = document.getElementsByName('Email')[0].value;
+        var pwd1 = document.getElementsByName('Password1')[0].value;
+        var pwd2 = document.getElementsByName('Password2')[0].value;
+        if (email == '') {
+            var para=document.createElement("p");
+            var node=document.createTextNode("邮箱不能为空!");
+            para.appendChild(node);
+            var E = document.getElementById("email");
+            E.appendChild(para);
+            E.getElementsByTagName("p")[0].style.color = "#FF0033";
+            return false;
+        }
+        else if (username == '') {
+            var para=document.createElement("p");
+            var node=document.createTextNode("用户名不能为空!");
+            para.appendChild(node);
+            var E = document.getElementById("username");
+            E.appendChild(para);
+            E.getElementsByTagName("p")[0].style.color = "#FF0033";
+            return false;
+        }
+        else if (pwd1 == '') {
+            var para=document.createElement("p");
+            var node=document.createTextNode("密码不能为空!");
+            para.appendChild(node);
+            var E = document.getElementById("pwd1");
+            E.appendChild(para);
+            E.getElementsByTagName("p")[0].style.color = "#FF0033";
+            return false;
+        }
+        else if (pwd1.length<6) {
+            var E = document.getElementById("pwd1");
+            try{
+                E.getElementsByTagName("p")[0].textContent = "密码长度须大于6!";
+                E.getElementsByTagName("p")[0].style.color = "#FF0033";
+            }
+            catch{
+                var para=document.createElement("p");
+                var node=document.createTextNode("密码长度须大于6!");
+                para.appendChild(node);
+                var E = document.getElementById("pwd1");
+                E.appendChild(para);
+                E.getElementsByTagName("p")[0].style.color = "#FF0033";
+                return false;
+            }
+            return false;
+        }
+        else if (pwd2 == '') {
+            var para=document.createElement("p");
+            var node=document.createTextNode("再次输入密码以确认!");
+            para.appendChild(node);
+            var E = document.getElementById("pwd2");
+            E.appendChild(para);
+            E.getElementsByTagName("p")[0].style.color = "#FF0033";
+            return false;
+        }
+        else if(pwd1 != pwd2) {
+            var E = document.getElementById("pwd2");
+            try{
+                E.getElementsByTagName("p")[0].textContent = "两次密码输入不一致!";
+                E.getElementsByTagName("p")[0].style.color = "#FF0033";
+            }
+            catch{
+                var para=document.createElement("p");
+                var node=document.createTextNode("两次密码输入不一致!");
+                para.appendChild(node);
+                var E = document.getElementById("pwd2");
+                E.appendChild(para);
+                E.getElementsByTagName("p")[0].style.color = "#FF0033";
+                return false;
+            }
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+
+<form name="register" onsubmit="return checkinfo()" method="POST" action="registerdo">
+    <div class="deanzctop_inner">
+        <span class="border-0">
+            <img src="static/image/welcome.png">
+        </span>
+    </div>
+    <div class="form-group" id="email">
+      <label for="exampleInputEmail1">邮箱</label>
+      <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="请输入您的邮箱">
+    </div>
+    <div class="form-group" id="username">
+        <label for="exampleInputUsername">用户名</label>
+        <input type="username" class="form-control" name="Username" placeholder="用户名由中英文、数字组成，最多20位" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" maxlength="20">
+    </div>
+    <div class="form-group" id="pwd1">
+      <label for="exampleInputPassword1">密码</label>
+      <input type="password" class="form-control" name="Password1" placeholder="请输入6到16位，由数字，字母组成" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="16">
+    </div>
+    <div class="form-group" id="pwd2">
+        <label for="exampleInputPassword2">确认密码</label>
+        <input type="password" class="form-control" name="Password2" placeholder="再次输入密码，保持一致" onKeyUp="value=value.replace(/[\W]/g,'')">
+    </div>
+    <button type="submit" class="btn btn-primary">注册</button>
+    <br>
+    <a class="link" href="/login">已有账户?点击登陆</a>
+    {% if check %}
+        <h5 style="color:red">{{check}}</h5>
+    {% endif %}
+</form>
+{% endblock %}

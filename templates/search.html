@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">查找结果</a>
+        {% if info %}
+            {% for i in info %}
+                <a href="{{i[3]}}-{{i[0]}}">{{i[1]}}<span class="badge badge-secondary">{{i[3]}}</span></a>
+                <a href="{{i[3]}}-{{i[0]}}" class="list-group-item list-group-item-action">{{i[2]}}</a>
+            {% endfor %}
+        {% else %}
+            <a href="#" class="list-group-item list-group-item-action">老司机啊，居然被难住了...</a>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+      <h5 class="card-title">{{user.Username}}的主页</h5>
+      <img class="card-img-top" src="static/image/user.jpg">
+    </div>
+    <div class="card-body">
+        <form name="change" method="POST" action="change">
+            <p class="card-text">电影，新的艺术。</p>
+            <label style="font:600; color:seagreen">修改用户名:</label>
+            <input name="name" placeholder="{{user.Username}}">
+            <label style="font:600; color:seagreen">修改邮箱:</label>
+            <input name="email" type="email" placeholder="{{user.Email}}">
+            <label style="font:600; color:seagreen">修改密码:</label>
+            <input name="password" type="password">
+            <button type="submit" class="btn btn-primary">保存设置</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
