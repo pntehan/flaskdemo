@@ -15,6 +15,9 @@
                         {% if x.flag == 'book' %}
                         <a>{{x.info}}</a>
                         {% endif %}
+                        {% if x.flag == 'music' %}
+                        <a>{{x.info}}</a>
+                        {% endif %}
                     </div>
                 </div>
                 <br />
@@ -28,7 +31,7 @@
             <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.first}}">首页</a></li>
             <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.pre}}">上一页</a></li>
             {% endif %}
-            {% if page.next <= 36 %}
+            {% if page.next <= page.end %}
             <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.one}}">{{page.one}}</a></li>
             <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.two}}">{{page.two}}</a></li>
             <li class="page-item"><a class="page-link" href="/{{contents[0].flag}}_{{page.three}}">{{page.three}}</a></li>
