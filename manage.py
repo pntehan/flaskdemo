@@ -100,10 +100,48 @@ def one_flim(flim_id):
     else:
         return render_template('content.html', title=name, infor=infor)
 
-@app.route('/music')
-def music():
+@app.route('/music_<int:page>')
+def music(page):
     #音乐页面
-    return '功能正在开发中...'
+    if not page:
+        page = 1
+    sql = 'select * from music.music limit %d,12;'%(page*12)
+    musics = get_information(sql)
+    one = []
+    for content in musics:
+        name = content[0]
+        info = content[1]
+        image_url = content[4]
+        music_id = content[6]
+        flag = content[5]
+        music = {'name':name, 'info':info,'image_url':image_url, 'id':music_id, 'flag':flag}
+        one.append(music)
+    pages = {'first':1, 'end':20, 'one':page+1, 'two':page+2, 'three':page+3, 'pre':page-1, 'next':page+1}
+    if 'Username' in session:
+        user = {'Username':session['Username'], 'Email':session['Email'], 'ID':session['ID']}
+        print(user)
+        return render_template('contents.html', title='音乐', contents=one, page=pages, user=user)
+    else:
+        return render_template('contents.html', title='音乐', contents=one, page=pages)
+
+@app.route('/music-<int:music_id>')
+def one_music(music_id):
+    sql = "select * from music.music where id={};".format(music_id)
+    data = get_information(sql)[0]
+    name = data[0]
+    info = data[1]
+    image_url = data[4]
+    star = data[3]
+    describe = data[2]
+    flag = data[6]
+    infor = {'name':name,'info':info,'image_url':image_url,'star':star,'describe':describe,'flag':flag}
+    # print(infor)
+    if 'Username' in session:
+        user = {'Username':session['Username'], 'Email':session['Email'], 'ID':session['ID']}
+        print(user)
+        return render_template('content.html', title=name, user=user, infor=infor)
+    else:
+        return render_template('content.html', title=name, infor=infor)
 
 @app.route('/book_<int:page>')
 def book(page):
@@ -121,7 +159,7 @@ def book(page):
         flag = content[6]
         book = {'name':name, 'info':info,'image_url':image_url, 'id':book_id, 'flag':flag}
         one.append(book)
-    pages = {'first':1, 'end':36, 'one':page+1, 'two':page+2, 'three':page+3, 'pre':page-1, 'next':page+1}
+    pages = {'first':1, 'end':19, 'one':page+1, 'two':page+2, 'three':page+3, 'pre':page-1, 'next':page+1}
     if 'Username' in session:
         user = {'Username':session['Username'], 'Email':session['Email'], 'ID':session['ID']}
         print(user)
@@ -159,7 +197,11 @@ def search():
     data3 = get_information(sql)
     sql = "select id,name,info,flag from book.book where info like '%{}%';".format(keyword)
     data4 = get_information(sql)
-    info = data1+data2+data3+data4
+    sql = "select id,name,info,flag from music.music where name like '%{}%';".format(keyword)
+    data5 = get_information(sql)
+    sql = "select id,name,info,flag from music.music where info like '%{}%';".format(keyword)
+    data6 = get_information(sql)
+    info = set(data1+data2+data3+data4+data5+data6)
     print(keyword)
     if 'Username' in session:
         name = session.get('Username')
@@ -276,4 +318,4 @@ def change():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host='192.168.43.152', port='5000')
+    app.run(host='127.0.0.1', port='5000')
