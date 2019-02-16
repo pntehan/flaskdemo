@@ -2,8 +2,8 @@
 {% block content %}
 <script language="javascript" type="text/javascript">
     function checkinfo() {
-        var pwd1 = document.getElementsByName('Password1')[0].value;
-        var pwd2 = document.getElementsByName('Password2')[0].value;
+        var pwd1 = document.getElementsByName("Password1")[0].value;
+        var pwd2 = document.getElementsByName("Password2")[0].value;
         if(pwd1 != pwd2) {
             var E = document.getElementById("pwd2");
             try{
@@ -26,7 +26,7 @@
         }
     }
     function checkemail(){
-        var data = document.getElementsByName('Email')[0];
+        var data = document.getElementsByName("Email")[0];
         if (data.value == ""){
             var E = data.nextElementSibling;
             E.style.display = "table";
@@ -39,7 +39,7 @@
         }
     }
     function checkusername(){
-        var data = document.getElementsByName('Username')[0];
+        var data = document.getElementsByName("Username")[0];
         if (data.value == ""){
             var E = data.nextElementSibling;
             E.style.display = "table";
@@ -52,7 +52,7 @@
         }
     }
     function checkpwd1(){
-        var data = document.getElementsByName('Password1')[0];
+        var data = document.getElementsByName("Password1")[0];
         if (data.value == ""){
             var E = data.nextElementSibling;
             E.style.display = "table";
@@ -65,7 +65,7 @@
         }
     }
     function checkpwd2(){
-        var data = document.getElementsByName('Password2')[0];
+        var data = document.getElementsByName("Password2")[0];
         if (data.value == ""){
             var E = data.nextElementSibling;
             E.style.display = "table";
