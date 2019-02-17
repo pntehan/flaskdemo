@@ -96,22 +96,11 @@ def login():
 @app.route('/logindo', methods={'POST', 'GET'})
 def logindo():
     #登录判断页面
-    email = request.form.get('Email')
-    pwd = request.form.get('Password')
-    sql = "select * from user.User where email='%s';"%(email)
-    info = find_information(sql)
-    if info == ():
-        check = '此邮箱无效!'
-        return render_template('login.html', title='登陆', check=check)
-    elif info[0][2] != pwd:
-        check = '密码输入错误!'
-        return render_template('login.html', title='登陆', check=check)
+    check = login_user()
+    if isinstance(check, dict):
+        return render_template('home.html', title='主页', user=check)
     else:
-        session['Username'] = info[0][1]
-        session['ID'] = info[0][0]
-        session['Email'] = info[0][3]
-        user = {'Username':session['Username'], 'Email':session['Email'], 'ID':session['ID']}
-        return render_template('home.html', title='主页', user=user)
+        return render_template('login.html', title='登陆', check=check)
 
 @app.route('/loginout')
 def loginout():
@@ -127,29 +116,12 @@ def register():
 @app.route('/registerdo', methods={'POST', 'GET'})
 def registerdo():
     #注册判断页面
-    name = request.form.get('Username')
-    email = request.form.get('Email')
-    pwd = request.form.get('Password2')
-    sql = "select * from user.User where email='%s';"%(email)
-    info = find_information(sql)
-    if info != ():
-        check = '同一邮箱只能注册一个账号!'
-        return render_template('register.html', title='注册', check=check)
+    check = create_user()
+    if isinstance(check, dict):
+        return render_template('home.html', title='主页', user=check)
     else:
-        while True:
-            number = str(randint(1,100000))
-            id = number.zfill(6)
-            sql = "select * from user.User where id='%s';"%(id)
-            if find_information(sql) == ():
-                break
-        info = {'Username':name, 'Email':email, 'password':pwd, 'ID':id}
-        sql = "insert into user.User(id, name, email, pwd) values('%s' ,'%s', '%s', '%s');"%(info['ID'], info['Username'], info['Email'], info['password'])
-        insert_information(sql)
-        session['Username'] = info['Username']
-        session['ID'] = info['ID']
-        session['Email'] = info['Email']
-        user = {'Username':session['Username'], 'Email':session['Email'], 'ID':session['ID']}
-        return render_template('home.html', title='主页', user=user)
+        return render_template('register.html', title='注册', check=check)
+
 
 @app.route('/user')
 def user():
