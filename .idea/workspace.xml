@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1275daa5-7649-4cfb-b78b-10d7320e6fbf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_session/b65f5f678f613fe09c1d2a5cb6ed3afd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2029240f6d1128be89ddc32729463129" beforeDir="false" afterPath="$PROJECT_DIR$/flask_session/2029240f6d1128be89ddc32729463129" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/46d50b102e6306e01e38993e368a66d1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,17 +14,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flasktest$Flask__manage_py_.coverage" NAME="Flask (manage.py) Coverage Results" MODIFIED="1550377247403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/flasktest$Flask__manage_py_.coverage" NAME="Flask (manage.py) Coverage Results" MODIFIED="1550378361710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-792">
+            <state relative-caret-position="427">
+              <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
               <folding>
                 <element signature="e#1#34#0" expanded="true" />
                 <element signature="e#1466#1639#0" />
@@ -34,17 +36,23 @@
                 <element signature="e#4857#5725#0" />
                 <element signature="e#6221#6781#0" />
                 <element signature="e#6976#8152#0" />
+                <element signature="e#7824#7884#0" />
+                <element signature="e#3198#3410#0" />
+                <element signature="e#8701#8778#0" />
+                <element signature="e#8832#8893#0" />
+                <element signature="e#3715#3849#0" />
+                <element signature="e#9747#9941#0" />
                 <element signature="e#10439#11525#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="-433">
+              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding>
                 <element signature="e#308#452#0" />
                 <element signature="e#484#696#0" />
@@ -59,6 +67,8 @@
                 <element signature="e#4116#4482#0" />
                 <element signature="e#4521#5413#0" />
                 <element signature="e#5445#6295#0" />
+                <element signature="e#6259#6829#0" />
+                <element signature="e#6856#7913#0" />
               </folding>
             </state>
           </provider>
@@ -106,7 +116,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -196,16 +206,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550371873437</updated>
-      <workItem from="1550371881622" duration="5012000" />
+      <workItem from="1550371881622" duration="6154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5012000" />
+    <option name="totallyTimeSpent" value="6154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1930295" />
@@ -218,7 +227,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20254958" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20254958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -258,28 +267,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <folding>
-            <element signature="e#1#34#0" expanded="true" />
-            <element signature="e#1466#1639#0" />
-            <element signature="e#2717#3021#0" />
-            <element signature="e#2505#3153#0" />
-            <element signature="e#3208#4084#0" />
-            <element signature="e#4185#4767#0" />
-            <element signature="e#4857#5725#0" />
-            <element signature="e#6221#6781#0" />
-            <element signature="e#6976#8152#0" />
-            <element signature="e#10439#11525#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        <state relative-caret-position="-433">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding>
             <element signature="e#308#452#0" />
             <element signature="e#484#696#0" />
@@ -294,6 +285,33 @@
             <element signature="e#4116#4482#0" />
             <element signature="e#4521#5413#0" />
             <element signature="e#5445#6295#0" />
+            <element signature="e#6259#6829#0" />
+            <element signature="e#6856#7913#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+          <folding>
+            <element signature="e#1#34#0" expanded="true" />
+            <element signature="e#1466#1639#0" />
+            <element signature="e#2717#3021#0" />
+            <element signature="e#2505#3153#0" />
+            <element signature="e#3208#4084#0" />
+            <element signature="e#4185#4767#0" />
+            <element signature="e#4857#5725#0" />
+            <element signature="e#6221#6781#0" />
+            <element signature="e#6976#8152#0" />
+            <element signature="e#7824#7884#0" />
+            <element signature="e#3198#3410#0" />
+            <element signature="e#8701#8778#0" />
+            <element signature="e#8832#8893#0" />
+            <element signature="e#3715#3849#0" />
+            <element signature="e#9747#9941#0" />
+            <element signature="e#10439#11525#0" />
           </folding>
         </state>
       </provider>
